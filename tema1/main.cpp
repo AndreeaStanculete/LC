@@ -75,7 +75,8 @@ unsigned Valideaza_Paranteze ( )
 
     if ( Paranteze_deschise == Paranteze_inchise )
         return Paranteze_deschise ;
-    else {
+    else 
+    {
         cout << "EROARE!\n";
         return 0;
     }
@@ -127,7 +128,8 @@ void Verificare_Formula ( unsigned & True )
                 Contor_paranteze++;
                 cout << " am deschis o paranteza... [ " << Contor_paranteze << " ] ...";
 
-                if ( ! strchr( "p!(" , Formula_abstracta[i+1] ) ) {
+                if ( ! strchr( "p!(" , Formula_abstracta[i+1] ) ) 
+                {
                     cout << " EROARE!\n";
                     True = 0 ;
                 }
@@ -135,8 +137,10 @@ void Verificare_Formula ( unsigned & True )
                 cout << "\n";
             }
 
-            if ( Formula_abstracta[i] == 'p' ) {
-                if ( ! strchr( "&|-=)" , Formula_abstracta[i+1] ) ) {
+            if ( Formula_abstracta[i] == 'p' ) 
+            {
+                if ( ! strchr( "&|-=)" , Formula_abstracta[i+1] ) ) 
+                {
                     cout << " EROARE!\n";
                     True = 0 ;
                 }
@@ -147,7 +151,8 @@ void Verificare_Formula ( unsigned & True )
                 Gasit_conector++ ;
                 cout << " am gasit un conector... [ " << Gasit_conector << " ] ...";
 
-                if ( ! strchr( "p(" , Formula_abstracta[i+1] ) ) {
+                if ( ! strchr( "p(" , Formula_abstracta[i+1] ) ) 
+                {
                     True = 0 ;
                     cout << " EROARE!\n";
                 }
@@ -158,36 +163,43 @@ void Verificare_Formula ( unsigned & True )
                 Contor_paranteze-- ;
                 cout << " am inchis o pereche de paranteze... [ " << Contor_paranteze << " ] ...";
 
-                if ( Gasit_conector == 0) {
+                if ( Gasit_conector == 0) 
+                {
                     cout << " EROARE! Nu exista conectori in aceasta pereche de paranteze.\n";
                     True = 0 ;
-                } else {
+                } else 
+                {
                     Gasit_conector-- ;
                     cout << " Am eliminat un conector... [ " << Gasit_conector << " ] ...";
                 }
 
-                if ( ! strchr( ")&-=|" , Formula_abstracta[i+1] ) ) {
+                if ( ! strchr( ")&-=|" , Formula_abstracta[i+1] ) ) 
+                {
                     True = 0 ;
                     cout << " EROARE!\n";
                 }
             }
 
-            if ( Contor_paranteze < 0 ) {
+            if ( Contor_paranteze < 0 ) 
+            {
                 True = 0 ;
                 cout << " !!! EROARE GENERALA !!! Se incearca inchiderea unei perechi de paranteze inexistente !\n";
             }
          
-            if( True == 1 ) {
+            if( True == 1 ) 
+            {
                 cout << " OK!\n";
             }
         }
 
-        if ( Contor_paranteze > 1 ) {
+        if ( Contor_paranteze > 1 ) 
+        {
             True = 0 ;
             cout << " !!! EROARE GENERALA !!! Nu s-au inchis toate parantezele !\n";
         }
     }
-    else {
+    else 
+    {
         True = 0 ;
         cout << " EROARE!\n";
     }
@@ -214,6 +226,7 @@ int main()
  
     if(Perechi_paranteze > 0)
         cout << " OK!\n";
+ 
     cout << "0.2. Se numara conectorii din formula...";
  
     unsigned Numar_de_conectori = Numara_Conectori() ;
@@ -232,10 +245,12 @@ int main()
       */
     cout << "1.0. Se verifica daca perechile de paranteze si conectorii coincid la numar...";
  
-    if ( Perechi_paranteze == Numar_de_conectori ) {
+    if ( Perechi_paranteze == Numar_de_conectori ) 
+    {
         True = 1;
         cout << " OK!\n";
-    } else {
+    } else 
+    {
         True = 0;
         cout << " EROARE!\n";
     }
@@ -244,7 +259,8 @@ int main()
       * Daca strlen(Formula_abstracta) == 1 inseamna ca avem o propozitie atomica si nu este
       * necesara verificarea.
       */
-    if ( True == 1 && strlen(Formula_abstracta) > 1 ) {
+    if ( True == 1 && strlen(Formula_abstracta) > 1 ) 
+    {
         cout << "2.0. Se verifica formula caracter cu caracter...\n";
         Verificare_Formula(True) ;
     }
