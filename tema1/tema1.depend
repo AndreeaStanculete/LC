@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1635774562 source:c:\users\andru\desktop\tema1\main.cpp
+	<iostream>
+	<fstream>
+	<string.h>
+
