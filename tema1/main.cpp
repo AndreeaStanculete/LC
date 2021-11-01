@@ -237,7 +237,7 @@ int main()
         cout << " OK!\n";
     } else {
         True = 0;
-        cout << " EROARE!\n"
+        cout << " EROARE!\n";
     }
 
     /**
